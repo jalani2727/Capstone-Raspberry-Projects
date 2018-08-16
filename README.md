@@ -42,9 +42,11 @@ Google also provided a guide for configuring and testing audio on a Raspberry Pi
 <h2> Step 1: Building the LED Circuit</h2>
 <p>After setting up the Raspberry Pi, i moved into the getting the hardware set up for displaying red, blue, and light as a response to sharp, flat, and in tune pitches respectively.
 The LED that i used had four connectors, each of which would be inserted into a breadboard connected to the raspberry pi</p>
-<p> One of the pins on the LED was longer than the other three so I connected it to the GND (ground) GPIO pin on the Raspberry Pi. The other three pins were connected to 5, 6, and 13 because the RPiPitch library set these pins for interaction between the code and the LED. <br>
+<p> One of the pins on the LED was longer than the other three so I connected it to the GND (ground) GPIO pin on the Raspberry Pi. The other three pins were connected to 5, 6, and 13 because the RPiPitch library set these pins for interaction between the code and the LED.</p>
+<p>
 Sample: 
 ```python
+
 if abs(adjfreq - Note_E4 ) < 1:
 			
 			#In Tune E
@@ -65,8 +67,6 @@ if abs(adjfreq - Note_E4 ) < 1:
 				GPIO.output(5, GPIO.LOW)
 				GPIO.output(6, GPIO.HIGH) #BLUE
 				GPIO.output(13, GPIO.LOW)
-
-
 </p>
 <ul>
 <li></li>
