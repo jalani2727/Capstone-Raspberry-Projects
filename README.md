@@ -65,7 +65,7 @@ if abs(adjfreq - Note_E4 ) < 1:
 				GPIO.output(5, GPIO.LOW)
 				GPIO.output(6, GPIO.HIGH) #BLUE
 				GPIO.output(13, GPIO.LOW)
-```
+
 
 </p>
 <ul>
