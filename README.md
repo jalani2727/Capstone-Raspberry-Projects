@@ -3,8 +3,8 @@
 
 
 ## What Are These?
-These two mini-projects are my first attempt at interating hardware , APIs and pre-existing code libraries to try and produce two household items that I can use every day! 
-Raspberry Pitch Perfect is a program that detects nearby pitch frequencies and (to the best of it's ability) supplies a steady stream detailing the particular pitch it's hearing!
+These two mini-projects are my first attempt at integrating hardware , APIs and pre-existing code libraries to try and produce two household items that I can use every day! <br>
+Raspberry Pitch Perfect is a program that detects nearby pitch frequencies and (to the best of it's ability) supplies a steady stream detailing the particular pitch it's hearing!<br>
 Raspberry Assistant is a home-made "Google Home" device that utilizes google's public Google Assistant API to function as a FREE Google Home Smart Speaker
 
 ## Author
@@ -14,13 +14,13 @@ Raspberry Assistant is a home-made "Google Home" device that utilizes google's p
 
 
 ## What was Used
-* Raspberry Pi3 + MicroSD with Rapsbian installed + Power Supply <img src="#" alt="Raspberry Pi3">
-* YETI Professional Multi-Pattern USB Microphone <img src="#" alt="YETI Mic">
-* JBL Flip USB / Bluetooth Speaker <img src="#" alt="Speaker">
-* 2 RGB LEDs (1 with 4 wires and one with 2 wires) <img src="#" alt="RGB LED">
-* 4 Resistors (1k ohms) <img src="#" alt="RGB LED">
-*  4 Jumper Cables (1 female end)<img src="#" alt="Cables">
-* 1 Breadboard <img src="#" alt="Breadboard">
+* Raspberry Pi3 + MicroSD with Rapsbian installed + Power Supply <
+* YETI Professional Multi-Pattern USB Microphone 
+* JBL Flip USB / Bluetooth Speaker 
+* 2 RGB LEDs (1 with 4 wires and one with 2 wires) 
+* 4 Resistors (1k ohms) 
+*  4 Jumper Cables (1 female end)
+* 1 Breadboard 
 * Python 2.7 and Python 3
 * RPiPitch Library (https://github.com/katrinamo/RPiPitch)
 * Google Assistant API
