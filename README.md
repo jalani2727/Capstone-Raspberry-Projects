@@ -107,6 +107,8 @@ Note_B = 10
 ```
 
 <p>As this library is already desinged to pick up the sharps and flats represented in the list of variables, such an extensive list is unneccasary. The only notes that aren't deteectable out of the box are notes C and F on the chromoatic scale so they were the only additions i'd made to the cent variabes.</p>
+<br>
+-----------------------------
 
 <p> As previously stated, the color of the LED changes in correposndance with the pitches being detected</p>
 
