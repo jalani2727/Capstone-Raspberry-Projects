@@ -109,10 +109,13 @@ Note_B = 10
 <p>As this library is already desinged to pick up the sharps and flats represented in the list of variables, such an extensive list is unneccasary. The only notes that aren't deteectable out of the box are notes C and F on the chromoatic scale so they were the only additions i'd made to the cent variabes.</p>
 
 <p> As previously stated, the color of the LED changes in correposndance with the pitches being detected</p>
+
 Sample of the Ineraction Between GPIO and LED: 
 ```python
-  #necessary import statement for using GPIO with a project
+#necessary import statement for using GPIO with a project
 import RPi.GPIO as GPIO
+```
+```python  
   #sample case statement
 if abs(adjfreq - Note_E4 ) < 1:
 			
