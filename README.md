@@ -30,22 +30,23 @@ Raspberry Assistant is a home-made "Google Home" device that utilizes google's p
 
 
 ## Build Process Walkthrough
-My time spent before entering (and also during) my DigitalCrafts experience was spent writing code for use in software development and web development. I saw that members of the previous cohorts explored hardware in addition to using various libraries and original code of their own for making their final projects. Being that I'm all about exploring new facets of technology, I figured that my final project would be a great opportunity to build something cool by combining hardware and the knowledge i'd pick up about using the terminal, API's and manipulating pre-existing code libraries.
+### Why?
+My time spent before entering (and also during) my DigitalCrafts experience was spent writing code for use in software development and web development. I saw that members of the previous cohorts explored hardware in addition to using various libraries and original code of their own for making their final projects. <br> Being that I'm all about exploring new facets of technology, I figured that my final project would be a great opportunity to build something cool by combining hardware and the knowledge i'd pick up about using the terminal, API's and manipulating pre-existing code libraries.
 
 ### Setting up Hardware
-I used the guide linked <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/setup">here</a> to set up the Raspbian on my Raspberry Pi and configure network access
+I used the guide linked <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/setup">here</a> to set up the Raspbian on my Raspberry Pi and configure network access.
 
-Google also provided a guide for configuring and testing audio on a Raspberry Pi as well. The instructions I followed can be found <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/audio">here</a>
+Google also provided a guide for configuring and testing audio on a Raspberry Pi as well. The instructions I followed can be found <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/audio">here.</a>
 
 
 ### Raspberry Pitch Perfect
 #### Step 1: Building the LED Circuit
 <ul>
-<li>Place female ends of jumper cables into GPIO5 (pin29), GPIO6 (pin31), and GPIO13 (pin33) and any GND pin (I used pi 39 since it was close by)</li>
-<li>Connect male end of each jumper cable to indivdual rows on the breadboard</li>
-<li>Place one end of a 1k resistor into the peg adjacent to the male end of your jumper cable on the same row. (do this for each jumper cable)</li>
+<li>Place female ends of jumper cables into GPIO5 (pin29), GPIO6 (pin31), and GPIO13 (pin33) and any GND pin (I used pi 39 since it was close by).</li>
+<li>Connect male end of each jumper cable to indivdual rows on the breadboard.</li>
+<li>Place one end of a 1k resistor into the peg adjacent to the male end of your jumper cable on the same row. (do this for each jumper cable).</li>
 <li>Place other end of the 1k resistors into an adjacent peg.</li>
-<li>Insert 4-wire LED into pegs adjacent to the resistors
+<li>Insert 4-wire LED into pegs adjacent to the resistors.
     <ul>
     <li> Insert Longest LED wire at the end of GNDpin wire path</li>
     <li> Insert one wire at the end of the GPIO5 wire path</li>
@@ -53,13 +54,14 @@ Google also provided a guide for configuring and testing audio on a Raspberry Pi
     <li> Insert one wire at the end of the GPIO13 wire path</li>
     </ul>
 </li>
-<li>Connect Raspberry Pi to power soruce</li>
+<li>Connect Raspberry Pi to power soruce.</li>
 </ul>
-<p>After setting up the Raspberry Pi, i moved into the getting the hardware set up for displaying red, blue, and light as a response to sharp, flat, and in tune pitches respectively.
-The LED that i used had four connectors, each of which would be inserted into a breadboard connected to the raspberry pi</p>
+<p>After setting up the Raspberry Pi, I moved into the getting the hardware set up for displaying red, blue, and light as a response to sharp, flat, and in tune pitches respectively.
+The LED that i used had four connectors, each of which would be inserted into a breadboard connected to the Raspberry Pi.</p>
 <p> One of the pins on the LED was longer than the other three so I connected it to the GND (ground) GPIO pin on the Raspberry Pi. The other three pins were connected to 5, 6, and 13 because the RPiPitch library set these pins for interaction between the code and the LED.</p>
-
-<p> As previously stated, the color of the LED changes in correposndance with the pitches being detected</p>
+____
+<br>
+<p> As previously stated, the color of the LED changes in correposndance with the pitches being detected.</p>
 
 Sample of the Ineraction Between GPIO and LED: 
 ```python
@@ -91,9 +93,9 @@ if abs(adjfreq - Note_E4 ) < 1:
 ```
 
 #### Step 2: Setting up the Code
-<p> The Numpy and Scipy environments on the pi needed to be set up so that python code and be edited and deployed on the raspberry pi</p>
+<p> The Numpy and Scipy environments on the Raspberry Pi needed to be set up so that Python code could be edited and deployed on the Raspberry Pi.</p>
 
-In Terminal:
+First, I typed the following commands into the Terminal on the Raspberry Pi:
 ```bash
 sudo apt-get install python-numpy
 sudo apt-get install python-opencv
@@ -101,15 +103,15 @@ sudo apt-get install python-scipy
 sudo apt-get install python-pyaudio python3-pyaudio
 
 ```
-<p> Next, I imported the freqDetect.py script from the <a href="ttps://github.com/katrinamo/RPiPitch">RPiPitch Library </A></p>
+<p> Next, I imported the freqDetect.py script from the <a href="ttps://github.com/katrinamo/RPiPitch">RPiPitch Library</a></p>
 
 #### Step 3: Run it!
 After making a few tweaks to the notes that could be recognized  the program was run using:
 ```bash
 python freqDetect.py
 ```
-<p>It should be noted that I ran the scripts using Python 2.7 rather than the most recent Python3 libraries.</p>
-_______________________________________
+<p>It should be noted that I ran the scripts using Python 2.7 rather than the most recent Python 3 libraries.</p>
+_____________________________________________________________________________________________
 
 
 
@@ -119,12 +121,14 @@ _______________________________________
 
 
 #### Step 2 Installing Python3 and the Google Assistant API
-<p> Google provided me with step-by-step instructions for how to properly configure the Google Assistant API for this project as well. Link provided <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/install-sample"> here.</a>
+<p> Google provided me with step-by-step instructions for how to properly configure the Google Assistant API for this project as well. Instructions for how to do so are also provided by Google <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/install-sample"> here.</a>
 
 
 
-#### Step 3 (optional) Setting up the On/Off LED
-The steps provided above for setting up a circuit can be applied here as well. However, I only used GPIO25 (pin 22) and the adjacent GND (pin 20) in my main.py file:
+#### Step 3 (optional) Setting Up the On/Off LED
+The steps provided previously in the "Raspberry Pitch Perfect" section above can be applied here as well. <br> However, I only used GPIO25 (pin 22) and the adjacent GND (pin 20) in my main.py file.
+<br>
+GPIO Setup:
 ```python
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(25, GPIO.OUT)
@@ -141,12 +145,14 @@ def process_event(event):
         print()
         GPIO.output(25,False)
 ```
+Explicit setup instructions:
 <ul>
-<li>Place the feale ends of 2 jumper cables into GPIO25 and the adjacent GND pin</li>
-<li>Connect male end of each jumper cable to indivdual rows on the breadboard </li>
-<li>Insert 2-wire LED into pegs adjacent to the male ends of your jumper cables plugged into your breadboard</li>
-<li></li>
+<li>Place the female ends of 2 jumper cables into GPIO25 and the adjacent GND pin.</li>
+<li>Connect male end of each jumper cable to indivdual rows on the breadboard. </li>
+<li>Insert the 2-wire LED into pegs adjacent to the male ends of your jumper cables plugged into your breadboard.</li>
 </ul>
+
+<!-- Picture of working circuit -->
 
 #### Step 4: Run it!
 I was able to run the program via the google-assistant-init.sh script:
@@ -154,7 +160,8 @@ I was able to run the program via the google-assistant-init.sh script:
 python3 -u /home/pi/Scripts/main.py
 ```
 
-
+<br>
+<br>
 
 
 
@@ -184,18 +191,19 @@ def main():
 ```
 Because of this, I am unale to run a version of my project that references my own google account because the credentials havent been provided. This simply means that the version I have up and running is more of a sample version that can't answer questions like, "Who am I?" or "What's on my Google Calendar today?"
 <br>
-However, a new instance of the google assistant can be created whenever the sampleAssistant script is run.
+However, a new instance of the google assistant that answers de-personalized questions can be created whenever the sampleAssistant script is run.
 
 ### Removing LED's from Assistant-Demo
-The main.py file for running a personalized Google Assistant on my RsapberryPi also contains the proper GPIO setup. As such, utilizing the on/off indicator upon starting a speaking event with the sample script isn't possible to the extent of my current knowledge.
+The main.py file for running a personalized Google Assistant on my RsapberryPi also contains the proper GPIO setup. As such, utilizing the On/Off indicator upon starting a speaking event with the sample script isn't possible to the extent of my current knowledge.
 I'd really like to make full use of the hardware I bought just to make my work light up but I will save that for another day.
 
 ### Audio/Playback Configuration
-Initially, getting the audio configuration set up was difficult because I didnt fully understand the syntax involved in configuring the ".asoundrc" files the RaspberryPi.
+<p>Initially, getting the audio configuration set up was difficult because I didnt fully understand the syntax involved in configuring the ".asoundrc" files the RaspberryPi.</p>
 
 <!-- picture of my arecord -l and aplay -l -->
 <br>
-The proper syntax for setting these files is:
+
+The proper syntax for configuring these files looks like:
 ```bash
 pcm.!default {
   type asym
@@ -217,7 +225,7 @@ pcm.speaker {
 ```
 
 
-Many of the guides that I had referenced configured the audio incorrectly in such that my speaker and microphone were in correctly detected becuase their card numbers and device numbers were not specified in the ".asoundrc" file necessary to set up the recording and playback.
+<p>Many of the guides that I had referenced configured the audio incorrectly in such that my speaker and microphone were in correctly detected becuase their card numbers and device numbers were not specified in the ".asoundrc" file necessary to set up the recording and playback.</p>
 <br>
 incorrect syntax from an <a href="https://medium.com/exploring-code/turn-your-raspberry-pi-into-homemade-google-home-9e29ad220075">article on medium</a>:
 ```bash
@@ -291,6 +299,6 @@ Note_B = 10
 <li>Proper use of Profile credentials downloaded from Google Developer site</li>
 <li>More accurate Pitch Detection</li>
 <li>Proper LED indication for Raspberry Assistant</li>
-<li>100% of all the potential amazing things that can be built with a Raspberry Pi</li>
-<li></li>
+<li>100% of all the potential amazing things that can be built with a Raspberry Pi!! :D</li>
+
 </ul>
