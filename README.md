@@ -19,7 +19,7 @@ Raspberry Assistant is a home-made "Google Home" device that utilizes google's p
 * JBL Flip USB / Bluetooth Speaker <img src="#" alt="Speaker">
 * RGB LED <img src="#" alt="RGB LED">
 * 4 Resistors (1k ohms) <img src="#" alt="RGB LED">
-*  4 Jumper Cables <img src="#" alt="Cables">
+*  4 Jumper Cables (1 female end)<img src="#" alt="Cables">
 * 1 Breadboard <img src="#" alt="Breadboard">
 
 * Audacity
@@ -29,7 +29,7 @@ Raspberry Assistant is a home-made "Google Home" device that utilizes google's p
 * Google Assistant API
 
 
-## Build Process Walkthrough
+<h1> Build Process Walkthrough </h1>
 My time spent before entering (and also during) my DigitalCrafts experience was spent writing code for use in software development and web development. I saw that members of the previous cohorts explored hardware in addition to using various libraries and original code of their own for making their final projects. Being that I'm all about exploring new facets of technology, I figured that my final project would be a great opportunity to build something cool by combining hardware and the knowledge i'd pick up about using the terminal, API's and manipulating pre-existing code libraries.
 
 ## Setting up Hardware
@@ -39,7 +39,22 @@ Google also provided a guide for configuring and testing audio on a Raspberry Pi
 
 
 ## Raspberry Pitch Perfect
-<h2> Step 1: Building the LED Circuit</h2>
+<h3> Step 1: Building the LED Circuit</h3>
+<ul>
+<li>Place female ends of jumper cables into GPIO5 (pin29), GPIO6 (pin31), and GPIO13 (pin33) and any GND pin (I used pi 39 since it was close by)</li>
+<li>Connect male end of each jumper cable to indivdual rows on the breadboard</li>
+<li>Place one end of a 1k resistor into the peg adjacent to the male end of your jumper cable on the same row. (do this for each jumper cable)</li>
+<li>Place other end of the 1k resistors into an adjacent peg.</li>
+<li>Insert LED into pegs adjacent to the resistors
+    <ul>
+    <li> Insert Longest LED wire at the end of GNDpin wire path</li>
+    <li> Insert one wire at the end of the GPIO5 wirepath</li>
+    <li> Insert one wire at the end of the GPIO6 wirepath</li>
+    <li> Insert one wire at the end of the GPIO13 wirepath</li>
+    </ul>
+</li>
+<li>Connect Raspberry Pi to power soruce</li>
+</ul>
 <p>After setting up the Raspberry Pi, i moved into the getting the hardware set up for displaying red, blue, and light as a response to sharp, flat, and in tune pitches respectively.
 The LED that i used had four connectors, each of which would be inserted into a breadboard connected to the raspberry pi</p>
 <p> One of the pins on the LED was longer than the other three so I connected it to the GND (ground) GPIO pin on the Raspberry Pi. The other three pins were connected to 5, 6, and 13 because the RPiPitch library set these pins for interaction between the code and the LED.</p>
@@ -69,12 +84,7 @@ if abs(adjfreq - Note_E4 ) < 1:
 				GPIO.output(13, GPIO.LOW)
 ```
 
-<ul>
-<li></li>
 
-<li></li>
-<li></li>
-</ul>
 
 
 ## Challenges
