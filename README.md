@@ -4,11 +4,12 @@
 
 ## What Are These?
 These two mini-projects are my first attempt at integrating hardware , APIs and pre-existing code libraries to try and produce two household items that I can use every day! <br>
-Raspberry Pitch Perfect is a program that detects nearby pitch frequencies and (to the best of it's ability) supplies a steady stream detailing the particular pitch it's hearing!<br>
-Raspberry Assistant is a home-made "Google Home" device that utilizes google's public Google Assistant API to function as a FREE Google Home Smart Speaker
+**_Raspberry Pitch Perfect_** is a program that detects nearby pitch frequencies and (to the best of it's ability) supplies a steady stream detailing the particular pitch it's hearing!<br>
+**_Raspberry Assistant_** is a home-made "Google Home" device that utilizes google's public Google Assistant API to function as a FREE Google Home Smart Speaker
 
-## Author
-* Jalani Paul
+## "Author"
+**Jalani Paul**
+<a href="https://jalanipaul.surge.sh">Portfolio</a>
 <br>
 <img src='src/images/me_and_hardware.JPG'></img>
 
@@ -60,7 +61,7 @@ ____
 <br>
 <p> As previously stated, the color of the LED changes in correposndance with the pitches being detected.</p>
 
-Sample of the Ineraction Between GPIO and LED: 
+Sample of the Interaction Between GPIO and LED: 
 ```python
 #necessary import statement for using GPIO with a project
 import RPi.GPIO as GPIO
@@ -103,18 +104,18 @@ sudo apt-get install python-pyaudio python3-pyaudio
 <p> Next, I imported the freqDetect.py script from the <a href="ttps://github.com/katrinamo/RPiPitch">RPiPitch Library</a></p>
 
 #### Part 3: Run it!
-After making a few tweaks to the notes that could be recognized  the program was run using:
+After making a few tweaks to the notes that could be recognized, the program was run using:
 ```bash
 python freqDetect.py
 ```
-<p>It should be noted that I ran the scripts using Python 2.7 rather than the most recent Python 3 libraries.</p>
+<p>*It should be noted that I ran the scripts using Python 2.7 rather than the most recent Python 3 libraries.*</p>
 _____________________________________________________________________________________________
 
 
 
 ### Raspberry Assistant
 #### Part 1: Registering the Device
-<p> After the raspberry pi is configured for audio properly, it needs to be registered and added to a project for your Google account on Google's developer page. Instructions for how to do so are provided by Google <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account"> here.</a></p>
+<p> After the Raspberry Pi is configured for audio properly, it needs to be registered and added to a project for your Google account on Google's developer page. Instructions for how to do so are provided by Google <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account"> here.</a></p>
 
 
 #### Part 2: Installing Python3 and the Google Assistant API
@@ -124,6 +125,7 @@ ________________________________________________________________________________
 
 #### Part 3: (optional) Setting Up the On/Off LED
 The steps provided previously in the "Raspberry Pitch Perfect" section above can be applied here as well. <br> However, I only used GPIO25 (pin 22) and the adjacent GND (pin 20) in my main.py file.
+<br>
 <br>
 GPIO Setup:
 ```python
@@ -223,8 +225,8 @@ pcm.speaker {
 
 
 <p>Many of the guides that I had referenced configured the audio incorrectly in such that my speaker and microphone were in correctly detected becuase their card numbers and device numbers were not specified in the ".asoundrc" file necessary to set up the recording and playback. <br>When trying to simply run the speaker-test command in the terminal, I was met with errors telling me that no devices were configured.  </p>
-<br>
-This was the result of incorrect syntax from an <a href="https://medium.com/exploring-code/turn-your-raspberry-pi-into-homemade-google-home-9e29ad220075">article I intitally referenced on medium</a> written as such:
+
+This was the result of incorrect syntax from an <a href="https://medium.com/exploring-code/turn-your-raspberry-pi-into-homemade-google-home-9e29ad220075">article I intitally referenced on Medium</a> written as such:
 
 ```bash
 pcm.!default {
