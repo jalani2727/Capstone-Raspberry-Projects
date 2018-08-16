@@ -9,17 +9,18 @@ Raspberry Assistant is a home-made "Google Home" device that utilizes google's p
 
 ## Author
 * Jalani Paul
+<br>
 <img src='src/images/me_and_hardware.JPG'></img>
 
 
 ## What was Used
-* Raspberry Pi3 + MicroSD with Rapsbian installed + Power Supply
-* YETI Professional Multi-Pattern USB Microphone
-* JBL Flip USB / Bluetooth Speaker
-* RGB LED
-* 4 resistors (1k ohms)
-* Jumper Cables
-* Bread Board
+* Raspberry Pi3 + MicroSD with Rapsbian installed + Power Supply <img src="#" alt="Raspberry Pi3">
+* YETI Professional Multi-Pattern USB Microphone <img src="#" alt="YETI Mic">
+* JBL Flip USB / Bluetooth Speaker <img src="#" alt="Speaker">
+* RGB LED <img src="#" alt="RGB LED">
+* 4 Resistors (1k ohms) <img src="#" alt="RGB LED">
+*  4 Jumper Cables <img src="#" alt="Cables">
+* 1 Breadboard <img src="#" alt="Breadboard">
 
 * Audacity
 * Python 2.7 and Python 3
@@ -39,7 +40,9 @@ Google also provided a guide for configuring and testing audio on a Raspberry Pi
 
 ## Raspberry Pitch Perfect
 <h1> Step 1: Building the LED Circuit</h1>
-<p>The first dive into </p>
+<p>After setting up the Raspberry Pi, i moved into the getting the hardware set up for displaying red, blue, and light as a response to sharp, flat, and in0tune pitches respectively.
+(picture of LED)
+The LED that i used had four connectors, each of which would be inserted into a breadboard connected to the raspberry pi</p>
 
 
 ## Challenges
@@ -48,8 +51,7 @@ Google also provided a guide for configuring and testing audio on a Raspberry Pi
 </p>
 
 ### Challeneges
-Beign that this was my first project made after learning how to use React, most of my frustrations came from reaching roadblocks that went beyond my skills and logic as a developer and required a bit of research into specific, particular syntax that React requires.
-The largest challenge over the course of development involved trying to properly get images to display that had indiviual path's referenced in the state. The components that render the random categories and ingredients can also render pictures in addition to names. Despite the correct relative path displaying in the src attribute in the img tags, the images wouldn't display at all. It was then that I had reached out for help and was led to the idea of importing each of my images directly to the app, storing them in a variable and then referecning that variable in the state rather than using the path as a string.
+Initially, getting the audio configuration set up was difficult because I didnt fully understand the syntax involved in configuring the ".asoundrc"
 <br>
 
 ### Layout & Positioning
