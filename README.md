@@ -7,9 +7,10 @@ These two mini-projects are my first attempt at integrating hardware , APIs and 
 **_Raspberry Pitch Perfect_** is a program that detects nearby pitch frequencies and (to the best of it's ability) supplies a steady stream detailing the particular pitch it's hearing!<br>
 **_Raspberry Assistant_** is a home-made "Google Home" device that utilizes google's public Google Assistant API to function as a FREE Google Home Smart Speaker
 
-## "Author"
-**Jalani Paul**
-<a href="https://jalanipaul.surge.sh">Portfolio</a>
+## Author
+**Jalani Paul** <br>
+
+<a href="https://jalanipaul.surge.sh">My Portfolio</a>
 <br>
 <img src='src/images/me_and_hardware.JPG'></img>
 
