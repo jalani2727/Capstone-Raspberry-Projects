@@ -21,10 +21,7 @@ Raspberry Assistant is a home-made "Google Home" device that utilizes google's p
 * 4 Resistors (1k ohms) <img src="#" alt="RGB LED">
 *  4 Jumper Cables (1 female end)<img src="#" alt="Cables">
 * 1 Breadboard <img src="#" alt="Breadboard">
-
-* Audacity
 * Python 2.7 and Python 3
-
 * RPiPitch Library (https://github.com/katrinamo/RPiPitch)
 * Google Assistant API
 
@@ -40,7 +37,7 @@ Google also provided a guide for configuring and testing audio on a Raspberry Pi
 
 
 ### Raspberry Pitch Perfect
-#### Step 1: Building the LED Circuit
+#### Part 1: Building the LED Circuit
 <ul>
 <li>Place female ends of jumper cables into GPIO5 (pin29), GPIO6 (pin31), and GPIO13 (pin33) and any GND pin (I used pi 39 since it was close by).</li>
 <li>Connect male end of each jumper cable to indivdual rows on the breadboard.</li>
@@ -92,7 +89,7 @@ if abs(adjfreq - Note_E4 ) < 1:
 				GPIO.output(13, GPIO.LOW)
 ```
 
-#### Step 2: Setting up the Code
+#### Part 2: Setting up the Code
 <p> The Numpy and Scipy environments on the Raspberry Pi needed to be set up so that Python code could be edited and deployed on the Raspberry Pi.</p>
 
 First, I typed the following commands into the Terminal on the Raspberry Pi:
@@ -105,7 +102,7 @@ sudo apt-get install python-pyaudio python3-pyaudio
 ```
 <p> Next, I imported the freqDetect.py script from the <a href="ttps://github.com/katrinamo/RPiPitch">RPiPitch Library</a></p>
 
-#### Step 3: Run it!
+#### Part 3: Run it!
 After making a few tweaks to the notes that could be recognized  the program was run using:
 ```bash
 python freqDetect.py
@@ -116,16 +113,16 @@ ________________________________________________________________________________
 
 
 ### Raspberry Assistant
-#### Step 1: Registering the Device
+#### Part 1: Registering the Device
 <p> After the raspberry pi is configured for audio properly, it needs to be registered and added to a project for your Google account on Google's developer page. Instructions for how to do so are provided by Google <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account"> here.</a></p>
 
 
-#### Step 2 Installing Python3 and the Google Assistant API
+#### Part 2: Installing Python3 and the Google Assistant API
 <p> Google provided me with step-by-step instructions for how to properly configure the Google Assistant API for this project as well. Instructions for how to do so are also provided by Google <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/install-sample"> here.</a>
 
 
 
-#### Step 3 (optional) Setting Up the On/Off LED
+#### Part 3: (optional) Setting Up the On/Off LED
 The steps provided previously in the "Raspberry Pitch Perfect" section above can be applied here as well. <br> However, I only used GPIO25 (pin 22) and the adjacent GND (pin 20) in my main.py file.
 <br>
 GPIO Setup:
@@ -154,7 +151,7 @@ Explicit setup instructions:
 
 <!-- Picture of working circuit -->
 
-#### Step 4: Run it!
+#### Part 4: Run it!
 I was able to run the program via the google-assistant-init.sh script:
 ```python
 python3 -u /home/pi/Scripts/main.py
@@ -225,9 +222,10 @@ pcm.speaker {
 ```
 
 
-<p>Many of the guides that I had referenced configured the audio incorrectly in such that my speaker and microphone were in correctly detected becuase their card numbers and device numbers were not specified in the ".asoundrc" file necessary to set up the recording and playback.</p>
+<p>Many of the guides that I had referenced configured the audio incorrectly in such that my speaker and microphone were in correctly detected becuase their card numbers and device numbers were not specified in the ".asoundrc" file necessary to set up the recording and playback. <br>When trying to simply run the speaker-test command in the terminal, I was met with errors telling me that no devices were configured.  </p>
 <br>
-incorrect syntax from an <a href="https://medium.com/exploring-code/turn-your-raspberry-pi-into-homemade-google-home-9e29ad220075">article on medium</a>:
+This was the result of incorrect syntax from an <a href="https://medium.com/exploring-code/turn-your-raspberry-pi-into-homemade-google-home-9e29ad220075">article I intitally referenced on medium</a> written as such:
+
 ```bash
 pcm.!default {
   type asym
@@ -296,8 +294,8 @@ Note_B = 10
 
 ### Future Additions
 <ul>
-<li>Proper use of Profile credentials downloaded from Google Developer site</li>
-<li>More accurate Pitch Detection</li>
+<li>Proper use of profile credentials downloaded from Google Developer site</li>
+<li>More accurate pitch detection</li>
 <li>Proper LED indication for Raspberry Assistant</li>
 <li>100% of all the potential amazing things that can be built with a Raspberry Pi!! :D</li>
 
