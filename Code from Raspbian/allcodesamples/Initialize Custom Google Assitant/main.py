@@ -35,11 +35,11 @@ def main():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('--credentials', type=existing_file,
-                        metavar='client_secret_30610634783-bgg6p69eqvp2lojlpn23m1cj0v82n3p8.apps.googleusercontent.com.json',
+                        metavar='MY CUSTOM CREDENTIALS',
                         default=os.path.join(
                             os.path.expanduser('/home/pi/Scripts'),
                             
-                            'client_secret_30610634783-bgg6p69eqvp2lojlpn23m1cj0v82n3p8.apps.googleusercontent.com.json'
+                            'PATH TO CREDENTIALS'
                         ),
                         help='Path to store and read OAuth2 credentials')
     args = parser.parse_args()
