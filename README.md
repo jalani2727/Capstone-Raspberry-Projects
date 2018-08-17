@@ -15,7 +15,7 @@ These two mini-projects are my first attempt at integrating hardware , APIs and 
 <img src='src/images/me_and_hardware.JPG'></img>
 
 
-## What was Used
+## Tools Used
 * Raspberry Pi3 + MicroSD with Rapsbian installed + Power Supply <
 * YETI Professional Multi-Pattern USB Microphone 
 * JBL Flip USB / Bluetooth Speaker 
@@ -30,7 +30,7 @@ These two mini-projects are my first attempt at integrating hardware , APIs and 
 
 ## Build Process Walkthrough
 ### Why?
-My time spent before entering (and also during) my DigitalCrafts experience was spent writing code for use in software development and web development. I saw that members of the previous cohorts explored hardware in addition to using various libraries and original code of their own for making their final projects. <br> Being that I'm all about exploring new facets of technology, I figured that my final project would be a great opportunity to build something cool by combining hardware and the knowledge i'd pick up about using the terminal, API's and manipulating pre-existing code libraries.
+My time spent before entering (and also during) my DigitalCrafts experience was spent writing code for use in software development and web development. I saw that members of the previous cohorts explored hardware in addition to using various libraries and original code of their own for making their final projects. <br> Being that I'm all about exploring new facets of technology, I figured that my final project would be a great opportunity to build something cool by combining hardware and the knowledge I had picked up about using the terminal, API's and manipulating pre-existing code libraries.
 
 ### Setting up Hardware
 I used the guide linked <a href="https://developers.google.com/assistant/sdk/guides/library/python/embed/setup">here</a> to set up the Raspbian on my Raspberry Pi and configure network access.
@@ -189,7 +189,7 @@ def main():
         credentials = google.oauth2.credentials.Credentials(token=None,
                                                             **json.load(f))
 ```
-Because of this, I am unale to run a version of my project that references my own google account because the credentials havent been provided. This simply means that the version I have up and running is more of a sample version that can't answer questions like, "Who am I?" or "What's on my Google Calendar today?"
+Because of this, I am unable to run a version of my project that references my personal Google account because the credentials haven't been provided. This simply means that the version I have up and running is more of a sample version that can't answer questions like, "Who am I?" or "What's on my Google Calendar today?"
 <br>
 However, a new instance of the google assistant that answers de-personalized questions can be created whenever the sampleAssistant script is run.
 
@@ -252,7 +252,7 @@ ctl.!default {
 The proper card numbers were not specified and led to great confusion about why my speakers and microphone were not working. 
 
 ### Adding Detectable Pitches
-<p>Out of the box, the script is designed to detect frequencies a person is looking to match when tuning a guitar to standard tuning using cent values. I had notied that the cent values were whole numbers ranging between 0 and 11. <br> I had noticed that the cent values used actually represent the number of half steps away from A on the chromatic scale that a particular note is</p>
+<p>Out of the box, the script is designed to detect frequencies a person is looking to match when tuning a guitar to standard tuning. It does this using cent values. I had noticed that the cent values were whole numbers ranging between 0 and 11. <br> The cent values used actually represent the number of half steps away from A on the chromatic scale that a particular note is</p>
 
 Cent Values & Note Variables:
 ```python
@@ -273,12 +273,12 @@ Note_E4= 5
 Given that there are 12 pitches and A has a cent vaule 0 here, the 12th pitch (A#/Bb) would be have a cent value of 11. This means that all remaining values to incorporate would look like this:
 ```python
 #notes in cents
-Note_E = 5
 Note_A = 0
 Note_GSharp = 1
 Note_G = 2
 Note_FSharp = 3 
 Note_F = 4
+Note_E = 5
 Note_E4= 5
 Note_DSharp = 6
 Note_D = 7
@@ -287,7 +287,7 @@ Note_C = 9
 Note_B = 10
 ```
 
-<p>As this library is already desinged to pick up the sharps and flats represented in the list of variables, such an extensive list ws unneccasary. The only notes that aren't deteectable out of the box are notes C and F on the chromoatic scale so they were the only additions i'd made to the cent variabes.</p>
+<p>As this library is already designed to pick up the sharps and flats represented in the list of variables, such an extensive list was unneccasary. The only notes that aren't detectable out of the box are C and F on the chromoatic scale. As such, they were the only additions i'd made to the cent variabes.</p>
 <br>
 
 
