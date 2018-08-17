@@ -252,7 +252,7 @@ ctl.!default {
 The proper card numbers were not specified and led to great confusion about why my speakers and microphone were not working. 
 
 ### Adding Detectable Pitches
-<p>Out of the box, the script is designed to detect frequencies a person is looking to match when tuning a guitar to standard tuning. It does this using cent values. I had noticed that the cent values were whole numbers ranging between 0 and 11. <br> The cent values used actually represent the number of half steps away from A on the chromatic scale that a particular note is</p>
+<p>Out of the box, the script is designed to detect frequencies a person is looking to match when tuning a guitar to standard tuning. It does this using cent values. I had noticed that the cent values were whole numbers ranging between 0 and 11. <br> The cent values used actually represent the number of half steps away from A on the chromatic scale that a particular note is.</p>
 
 Cent Values & Note Variables:
 ```python
